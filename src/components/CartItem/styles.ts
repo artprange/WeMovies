@@ -15,6 +15,11 @@ export const ItemInfoContainer = styled.div`
     padding: 1rem;
     align-items: center;
     background-color: ${(props) => props.theme.white};
+
+    h2{
+      margin-top: 1rem;
+    }
+   
   }
 `
 
@@ -78,6 +83,7 @@ export const ItemDescription = styled.div`
 
     h2 {
       width: 6.375rem;
+      
 
       font-size: 1rem;
     }

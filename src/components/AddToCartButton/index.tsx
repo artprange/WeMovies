@@ -1,7 +1,7 @@
 import addToCartIcon from '../../assets/icons/addToCartIcon.svg'
 import { AddedToCart, EmptyCartButton } from './styles'
 
-interface ButtonProps {
+export interface ButtonProps {
   movieId: number
   count: number
   addToCart: () => void

@@ -1,6 +1,6 @@
 import { createContext, useState, useContext, ReactNode, FC } from 'react'
 
-// Definição da interface para os itens do carrinho
+
 interface CartItem {
   id: number
   title: string
@@ -9,7 +9,7 @@ interface CartItem {
   quantity: number
 }
 
-// Definição do tipo do contexto do carrinho
+
 interface CartContextType {
   cart: CartItem[]
   addToCart: (movie: CartItem) => void
@@ -19,37 +19,37 @@ interface CartContextType {
   clearCart: () => void // Nova função para limpar o carrinho
 }
 
-// Criação do contexto com um valor inicial indefinido
+
 const CartContext = createContext<CartContextType | undefined>(undefined)
 
-// Provedor do contexto do carrinho
+// cart context provider
 export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [cart, setCart] = useState<CartItem[]>([]) // Estado para armazenar os itens do carrinho
 
-  // Função para adicionar um item ao carrinho
+  // add item to cart
   const addToCart = (movie: CartItem) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find((item) => item.id === movie.id)
       if (existingItem) {
-        // Se o item já existe no carrinho, aumenta a quantidade
+        
         return prevCart.map((item) =>
           item.id === movie.id
             ? { ...item, quantity: item.quantity + 1 }
             : item,
         )
       } else {
-        // Se o item não existe, adiciona um novo item ao carrinho
+        
         return [...prevCart, { ...movie, quantity: 1 }]
       }
     })
   }
 
-  // Função para remover um item do carrinho
+  // remove item from cart
   const removeItem = (itemId: number) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== itemId))
   }
 
-  // Função para aumentar a quantidade de um item
+  // add item quantity
   const increaseQuantity = (itemId: number) => {
     setCart((prevCart) =>
       prevCart.map((item) =>
@@ -58,7 +58,7 @@ export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
     )
   }
 
-  // Função para diminuir a quantidade de um item
+  // subtract item quantity
   const decreaseQuantity = (itemId: number) => {
     setCart((prevCart) =>
       prevCart.map((item) =>
@@ -69,9 +69,9 @@ export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
     )
   }
 
-  // Função para limpar o carrinho
+  // empty cart
   const clearCart = () => {
-    setCart([]) // Define o estado do carrinho como um array vazio
+    setCart([]) 
   }
 
   return (

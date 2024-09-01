@@ -28,7 +28,7 @@ export const CartContainer = styled.div`
 
   @media (max-width: ${breakpoints.mobile}) {
     max-width: 22.5rem;
-    margin: 1rem;
+    margin: 1rem auto;
     padding: 1rem;
   }
 `

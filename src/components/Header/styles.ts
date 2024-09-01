@@ -13,9 +13,10 @@ export const HeaderContainer = styled.header`
     font-size: 1.25rem;
   }
 
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 22.5rem;
     justify-content: space-between;
-    padding: 1.5rem 1.125rem;
+    
     h3 {
       display: none;
     }
@@ -26,6 +27,11 @@ export const CartContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+ 
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 5.625rem;
+    justify-content: space-around;
+  }
 `
 
 export const CartDetailsContainer = styled.div`

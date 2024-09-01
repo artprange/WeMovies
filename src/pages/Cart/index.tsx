@@ -26,21 +26,21 @@ export function Cart() {
 
   const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0)
 
-  const handleDelete = (itemId: number) => {
+  function handleDelete (itemId: number){
     removeItem(itemId)
   }
 
-  const handleIncrease = (itemId: number) => {
+  function handleIncrease (itemId: number){
     increaseQuantity(itemId)
   }
 
-  const handleDecrease = (itemId: number) => {
+  function handleDecrease (itemId: number){
     decreaseQuantity(itemId)
   }
 
-  const handleCheckout = () => {
+  function handleCheckout (){
     navigate('/success', { state: { checkoutComplete: true } })
-    clearCart() // Limpa o carrinho após a navegação
+    clearCart() 
   }
 
   if (loading) {
