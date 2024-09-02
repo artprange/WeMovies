@@ -7,19 +7,9 @@ import {
 import add from '../../assets/icons/add.svg'
 import remove from '../../assets/icons/remove.svg'
 import trash from '../../assets/icons/trash.svg'
+import { CartItemProps } from './types'
 
-interface CartItemProps {
-  item: {
-    id: number
-    title: string
-    price: number
-    image: string
-    quantity: number
-  }
-  onDelete: (id: number) => void
-  onIncrease: (id: number) => void
-  onDecrease: (id: number) => void
-}
+
 
 export function CartItem({
   item,

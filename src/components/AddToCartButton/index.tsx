@@ -1,11 +1,8 @@
 import addToCartIcon from '../../assets/icons/addToCartIcon.svg'
 import { AddedToCart, EmptyCartButton } from './styles'
+import { ButtonProps } from './types'
 
-export interface ButtonProps {
-  movieId: number
-  count: number
-  addToCart: () => void
-}
+
 
 export function Button({ count, addToCart }: ButtonProps) {
   return count > 0 ? (

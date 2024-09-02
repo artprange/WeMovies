@@ -5,13 +5,9 @@ import { Button } from '../../components/AddToCartButton'
 import { useCart } from '../../context/CartContext'
 
 import { LoaderSpinner } from '../../components/LoaderSpinner/loader'
+import { MovieDataTypes } from './types'
 
-interface MovieDataTypes {
-  id: number
-  title: string
-  price: number
-  image: string
-}
+
 
 export const Home = () => {
   const [movies, setMovies] = useState<MovieDataTypes[]>([])

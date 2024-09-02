@@ -1,8 +1,7 @@
 import { BackToHomeButton as StyledBackToHomeButton } from './styles'
+import { BackToHomeButtonProps } from './types'
 
-type BackToHomeButtonProps = {
-  children: React.ReactNode
-}
+
 
 export function BackToHomeButton({ children }: BackToHomeButtonProps) {
   return <StyledBackToHomeButton>{children}</StyledBackToHomeButton>
