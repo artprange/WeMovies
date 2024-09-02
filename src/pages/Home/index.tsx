@@ -1,46 +1,21 @@
-import { CardsContainer, MovieContainer } from './styles'
-import { useEffect, useState } from 'react'
-import { fetchMovieData } from '../../services/fetchMovieData'
-import { Button } from '../../components/AddToCartButton'
-import { useCart } from '../../context/CartContext'
-
-import { LoaderSpinner } from '../../components/LoaderSpinner/loader'
-import { MovieDataTypes } from './types'
-
+import { CardsContainer, MovieContainer } from './styles';
+import { Button } from '../../components/AddToCartButton';
+import { useCart } from '../../context/CartContext';
+import { LoaderSpinner } from '../../components/LoaderSpinner/loader';
+import { useMovies } from '../../hooks/useMovies';
 
 
 export const Home = () => {
-  const [movies, setMovies] = useState<MovieDataTypes[]>([])
-  const [loading, setLoading] = useState(true)
-
-  const { addToCart, cart } = useCart()
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const movieData = await fetchMovieData()
-        if (movieData && movieData.products) {
-          setMovies(movieData.products)
-        } else {
-          console.error('Invalid movie data format:', movieData)
-        }
-      } catch (error) {
-        console.error('Error fetching movie data:', error)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchData()
-  }, [])
+  const { movies, loading } = useMovies();
+  const { addToCart, cart } = useCart();
 
   if (loading) {
-    return <LoaderSpinner />
+    return <LoaderSpinner />;
   }
 
   return (
     <CardsContainer>
-      {movies.map((movie: MovieDataTypes) => (
+      {movies.map((movie) => (
         <MovieContainer key={movie.id}>
           <img src={movie.image} alt={movie.title} />
           <p>{movie.title}</p>
@@ -56,5 +31,5 @@ export const Home = () => {
         </MovieContainer>
       ))}
     </CardsContainer>
-  )
-}
+  );
+};

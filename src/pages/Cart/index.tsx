@@ -84,7 +84,7 @@ export function Cart() {
         <EmptyCartContainer>
           <p>Parece que não há nada por aqui :(</p>
           <img src={notFound} alt="Carrinho Vazio" />
-          <NavLink to="/">
+          <NavLink to="/cart">
             <BackToHomeButton>Recarregar página</BackToHomeButton>
           </NavLink>
         </EmptyCartContainer>

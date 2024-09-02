@@ -10,6 +10,9 @@
     após clonar o repositório:
         cd wemovie-ecommerce-project
 
+    configure o arquivo .env
+        renomeie o arquivo 'envExample' para '.env'
+
     instale as dependências:
         npm install
 
