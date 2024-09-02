@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { Button } from './index';
-import { ButtonProps } from './index';
+import { ButtonProps } from './types';
 
 describe('AddToCartButton', () => {
   it('should render the add to cart button', () => {
