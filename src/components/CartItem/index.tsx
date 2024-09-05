@@ -45,3 +45,6 @@ export function CartItem({
     </ItemInfoContainer>
   )
 }
+
+
+//responsaǘel por exibir os detalhes de um item no carrinho, bem como aumentar e diminuir a quantidade de intems.

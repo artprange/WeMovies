@@ -96,4 +96,9 @@ export const useCart = () => {
     throw new Error('somehing broke in the cart contex :( ')
   }
   return context
+
+  // facilita o uso do contexto nos componentes. se o contexto não for definido, ele vai jogar um erro caso o provider não seja válido
 }
+
+
+// aqui criei o context do carrinho, ou seja agora há como compartilhar o estado entre diferentes componentes
